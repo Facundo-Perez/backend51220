@@ -1,4 +1,5 @@
 const fs = require("fs");
+
 class ProductManager {
     static last_id = 0;
 
