@@ -102,7 +102,6 @@ class ProductManager {
 
 //Test
     const newManager = new ProductManager();
-
     newManager.addProduct(
         "Product 01",
         "Description 01",
@@ -114,19 +113,86 @@ class ProductManager {
     newManager.addProduct(
         "Product 02",
         "Description 02",
-        20,
+        10,
         "img2.jpg",
         "P02",
-        20
+        10
     );
     newManager.addProduct(
         "Product 03",
         "Description 03",
-        30,
+        10,
         "img3.jpg",
         "P03",
+        10
+    );
+    newManager.addProduct(
+        "Product 04",
+        "Description 04",
+        10,
+        "img4.jpg",
+        "P04",
+        10
+    );
+    newManager.addProduct(
+        "Product 05",
+        "Description 05",
+        10,
+        "img5.jpg",
+        "P05",
+        10
+    );
+    newManager.addProduct(
+        "Product 06",
+        "Description 06",
+        10,
+        "img6.jpg",
+        "P06",
+        10
+    );
+    newManager.addProduct(
+        "Product 07",
+        "Description 07",
+        10,
+        "img7.jpg",
+        "P07",
+        10
+    );
+    newManager.addProduct(
+        "Product 08",
+        "Description 08",
+        10,
+        "img8.jpg",
+        "P08",
+        10
+    );
+2
+    newManager.addProduct(
+        "Product 09",
+        "Description 09",
+        10,
+        "img9.jpg",
+        "P09",
+        10
+    );
+    newManager.addProduct(
+        "Product 10",
+        "Description 10",
+        20,
+        "img10.jpg",
+        "P10",
+        20
+    );
+    newManager.addProduct(
+        "Product 11",
+        "Description 11",
+        30,
+        "img11.jpg",
+        "P11",
         30
     );
     console.log(newManager.getProducts)
     console.log(newManager.getProductById(1))
     console.log(newManager.getProductById(5)) // "Product not found"
+
+    module.exports = ProductManager;

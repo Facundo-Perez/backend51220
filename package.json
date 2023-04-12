@@ -1,0 +1,23 @@
+{
+  "name": "backend51220",
+  "version": "1.0.0",
+  "description": "",
+  "main": "ProductManager.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Facundo-Perez/backend51220.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Facundo-Perez/backend51220/issues"
+  },
+  "homepage": "https://github.com/Facundo-Perez/backend51220#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
