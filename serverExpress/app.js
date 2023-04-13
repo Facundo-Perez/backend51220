@@ -11,8 +11,12 @@ const server = app.listen(PORT, () =>{
 const products = new ProductManager('productsList.JSON');
 
 app.get('/products', async (req,res)=>{
+    
     const allProducts = await products.getAll();
-    res.send(allProducts);
+    
+    const limit = req.query.limit ? parseInt(req.query.limit) : undefined;
+    const pLimit = limit ? products.slice(0, limit) : allProducts;
+    res.send(pLimit);
 });
 
 app.get('/products/:pId', async(req,res)=>{
@@ -23,3 +27,5 @@ app.get('/products/:pId', async(req,res)=>{
     
     res.send(product);
 });
+
+    
