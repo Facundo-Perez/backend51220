@@ -3,21 +3,13 @@ const ProductManager = require('../ProductManager');
 const PORT = 8080;
 
 const app = express();
+app.use(bodyParser.json());
+// app.use(express.json);
+app.use(express.urlencoded({extended: true}));
 
-const server = app.listen(PORT, () =>{
-    console.log(`Server Express active in port ${PORT}.`);
-});
 
 const products = new ProductManager('productsList.JSON');
 
-app.get('/products', async (req,res)=>{
-    
-    const allProducts = await products.getAll();
-    
-    const limit = req.query.limit ? parseInt(req.query.limit) : undefined;
-    const pLimit = limit ? products.slice(0, limit) : allProducts;
-    res.send(pLimit);
-});
 
 app.get('/products/:pId', async(req,res)=>{
     const pId = req.params.pId;
@@ -29,3 +21,14 @@ app.get('/products/:pId', async(req,res)=>{
 });
 
     
+// Rutas de productos
+const productsRouter = require('./routes/products.js');
+app.use('/api/', productsRouter);
+
+// Rutas de carritos
+const cartsRouter = require('./routes/carts.js');
+app.use('/api/', cartsRouter);
+
+app.listen(PORT, () =>{
+    console.log(`Server Express active in port ${PORT}.`);
+});
