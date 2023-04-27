@@ -1,5 +1,6 @@
-const fs = require("fs");
-
+import fs from 'fs'
+import { Router } from 'express';
+const router = Router();
 class ProductManager {
     static last_id = 0;
 
@@ -195,4 +196,4 @@ class ProductManager {
     console.log(newManager.getProductById(1))
     console.log(newManager.getProductById(5)) // "Product not found"
 
-    module.exports = ProductManager;
+    export default ProductManager;

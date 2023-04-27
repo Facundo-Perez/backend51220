@@ -1,8 +1,6 @@
-const express = require('express');
-const router = express.Router();
-
-let carts = [];
-
+import { Router } from "express";
+let cartsRouter = [];
+const router = Router();
 router.get('/carts', (req, res) => {
   
   });
@@ -10,14 +8,14 @@ router.get('/carts', (req, res) => {
   router.get('/carts/:id', (req, res) => {
     const cartId = parseInt(req.params.id);
 
-    const cart = carts.find(c => c.id === cartId);
+    const cartRouter = carts.find(c => c.id === cartId);
   
-    if (!cart) {
+    if (!cartRouter) {
       res.status(404).json({ message: 'Cart not found.' });
       return;
     }
   
-    res.json(cart.products);
+    res.json(cartRouter.products);
     
   });
   
@@ -31,9 +29,9 @@ router.get('/carts', (req, res) => {
       res.status(201).json(newCart);
     });
     
-    router.get('/', (req, res) => {
+  router.get('/', (req, res) => {
       res.json(carts);
     });
   
 
-  module.exports = router;
+  export default cartsRouter;
