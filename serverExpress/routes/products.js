@@ -82,4 +82,4 @@ router.get('/products', async (req, res) => {
   });
   
 
- export default productsRouter;
+ export default router;

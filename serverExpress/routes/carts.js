@@ -34,4 +34,4 @@ router.get('/carts', (req, res) => {
     });
   
 
-  export default cartsRouter;
+  export default router;
